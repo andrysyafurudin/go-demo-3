@@ -75,7 +75,7 @@ func RunServer() {
 	mux.HandleFunc("/demo/hello", HelloServer)
 	mux.HandleFunc("/demo/person", PersonServer)
 	mux.HandleFunc("/demo/random-error", RandomErrorServer)
-	mux.Handle("/metrics", prometheusHandler())
+	//mux.Handle("/metrics", prometheusHandler())
 	logFatal("ListenAndServe: ", httpListenAndServe(":8080", mux))
 }
 
