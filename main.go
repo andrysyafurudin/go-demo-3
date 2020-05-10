@@ -49,7 +49,7 @@ func main() {
 }
 
 func init() {
-	prometheus.MustRegister(histogram)
+	//prometheus.MustRegister(histogram)
 }
 
 // TODO: Test
