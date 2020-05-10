@@ -4,11 +4,11 @@ image:
   tag: latest
   dbTag: 3.3
 ingress:
-  enabled: false
-  host: acme.com
+  enabled: true
+  host: go-demo-3-functional
 service:
   # Change to NodePort if ingress.enable=false
-  type: NodePort #ClusterIP
+  type: ClusterIP
 rbac:
   enabled: true
 resources:
