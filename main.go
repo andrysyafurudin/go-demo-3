@@ -140,9 +140,9 @@ func PersonServer(w http.ResponseWriter, req *http.Request) {
 	io.WriteString(w, msg)
 }
 
-var prometheusHandler = func() http.Handler {
-	return prometheus.Handler()
-}
+//var prometheusHandler = func() http.Handler {
+//	return prometheus.Handler()
+//}
 
 var findPeople = func(res *[]Person) error {
 	return coll.Find(bson.M{}).All(res)
