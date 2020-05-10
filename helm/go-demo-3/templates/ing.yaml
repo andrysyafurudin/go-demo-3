@@ -11,7 +11,7 @@ metadata:
     heritage: {{ .Release.Service }}
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
   - http:
