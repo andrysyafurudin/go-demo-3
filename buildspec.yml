@@ -1,0 +1,17 @@
+version: 0.2
+phases:
+  install: 
+   runtime-versions: 
+     docker: 1.19
+  pre_build:
+     commands:
+      - echo login to ecr started on `date`
+      - docker login -u AWS -p $(aws ecr get-login-password) https://893049264035.dkr.ecr.us-east-1.amazonaws.com
+  build:
+    commands:
+      - echo docker build started on `date`
+      - docker build -t 893049264035.dkr.ecr.us-east-1.amazonaws.com/andrysyafurudin:${CODEBUILD_BUILD_NUMBER} .
+  post_build:
+    commands:
+      - echo docker push started on `date`
+      - docker push 893049264035.dkr.ecr.us-east-1.amazonaws.com/andrysyafurudin:${CODEBUILD_BUILD_NUMBER} 
